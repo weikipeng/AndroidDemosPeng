@@ -34,49 +34,13 @@ public class TouchView extends View {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        String message = "";
-
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                message = "View ===> onTouchEvent ===> MotionEvent.ACTION_DOWN";
-                break;
-            case MotionEvent.ACTION_MOVE:
-                message = "View ===> onTouchEvent ===> MotionEvent.ACTION_MOVE";
-                break;
-            case MotionEvent.ACTION_UP:
-                message = "View ===> onTouchEvent ===> MotionEvent.ACTION_UP";
-                break;
-            case MotionEvent.ACTION_CANCEL:
-                message = "View ===> onTouchEvent ===> MotionEvent.ACTION_CANCEL";
-                break;
-        }
-        PLog.d(message);
         PLog.e(PLog.motionEventToString(event));
-
         return super.onTouchEvent(event);
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        String message = "";
-
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                message = "View ===> dispatchTouchEvent ===> MotionEvent.ACTION_DOWN";
-                break;
-            case MotionEvent.ACTION_MOVE:
-                message = "View ===> dispatchTouchEvent ===> MotionEvent.ACTION_MOVE";
-                break;
-            case MotionEvent.ACTION_UP:
-                message = "View ===> dispatchTouchEvent ===> MotionEvent.ACTION_UP";
-                break;
-            case MotionEvent.ACTION_CANCEL:
-                message = "View ===> dispatchTouchEvent ===> MotionEvent.ACTION_CANCEL";
-                break;
-        }
-        PLog.d(message);
         PLog.e(PLog.motionEventToString(event));
-
         return super.dispatchTouchEvent(event);
     }
 }

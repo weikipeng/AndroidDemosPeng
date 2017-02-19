@@ -10,4 +10,12 @@
         android:layout_height="wrap_content"
         android:text="Demo list"/>
 
+    <TextView
+        android:id="@+id/buttonTouchEvent"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#66660000"
+        android:gravity="center"
+        android:text="触摸事件分发分析"/>
+
 </LinearLayout>

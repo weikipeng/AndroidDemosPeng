@@ -1,5 +1,6 @@
 package com.pengjunwei.android.demos.util;
 
+import android.content.SyncStatusObserver;
 import android.util.Log;
 import android.view.MotionEvent;
 
@@ -8,6 +9,11 @@ import android.view.MotionEvent;
  */
 public class PLog {
     public static final String TAG = PLog.class.getSimpleName();
+
+    public static void d(String message){
+        Log.println(Log.INFO, TAG, message);
+//        System.out.println(message);
+    }
 
     public static void e(String message) {
 //        String fullClassName = Thread.currentThread().getStackTrace()[3].getClassName();
@@ -43,13 +49,13 @@ public class PLog {
 
 //        Log.e("tag", "TouchEventActivity ===> dispatchTouchEvent ===> MotionEvent.ACTION_UP");
 
-        Log.println(Log.INFO, TAG, stringBuilder.toString());
+        Log.println(Log.ERROR, TAG, stringBuilder.toString());
     }
 
     public static String motionEventToString(MotionEvent ev) {
         String result = "";
 
-        switch (ev.getActionMasked()) {
+        switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 result = "MotionEvent.ACTION_DOWN";
                 break;
@@ -79,7 +85,7 @@ public class PLog {
     public static boolean motionEventToString(MotionEvent ev, boolean flag) {
         String message = "";
 
-        switch (ev.getActionMasked()) {
+        switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 message = "MotionEvent.ACTION_DOWN";
                 break;
@@ -111,7 +117,7 @@ public class PLog {
         stringBuilder.append("\t\t\t\t\t\tLine:");
         stringBuilder.append(lineNumber);
 
-        Log.println(Log.INFO, TAG, stringBuilder.toString());
+        Log.println(Log.ERROR, TAG, stringBuilder.toString());
 
         return flag;
     }

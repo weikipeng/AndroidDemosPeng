@@ -65,6 +65,8 @@ public class TextAlign extends AppCompatActivity {
             // 下面这行是实现水平居中，drawText对应改为传入targetRect.centerX()
             paint.setTextAlign(Paint.Align.CENTER);
             canvas.drawText(testString, targetRect.centerX(), baseline, paint);
+//            canvas.drawLine(50, baseline, 1000, baseline, paint);
+//            canvas.drawLine(targetRect.centerX(), 0, targetRect.centerX(), baseline, paint);
         }
 
 

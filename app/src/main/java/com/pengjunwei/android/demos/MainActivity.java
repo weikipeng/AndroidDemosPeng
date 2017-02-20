@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.pengjunwei.android.demos.graphics.TextAlign;
 import com.pengjunwei.android.demos.touch.TouchEventActivity;
 
 /**
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_main);
         findViewById(R.id.buttonTouchEvent).setOnClickListener(this);
+        findViewById(R.id.buttonTextAlign).setOnClickListener(this);
     }
 
     @Override
@@ -25,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.buttonTouchEvent:
                 startActivity(new Intent(this, TouchEventActivity.class));
+                break;
+            case R.id.buttonTextAlign:
+                startActivity(new Intent(this, TextAlign.class));
                 break;
         }
     }

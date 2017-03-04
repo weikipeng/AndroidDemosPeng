@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.pengjunwei.android.demos.graphics.TextAlign;
 import com.pengjunwei.android.demos.touch.TouchEventActivity;
+import com.pengjunwei.android.demos.ui.WebViewRecyclerActivity;
 
 /**
  * Created by WikiPeng on 2017/2/19 07:51.
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.layout_main);
         findViewById(R.id.buttonTouchEvent).setOnClickListener(this);
         findViewById(R.id.buttonTextAlign).setOnClickListener(this);
+        startActivity(new Intent(this, WebViewRecyclerActivity.class));
+        finish();
     }
 
     @Override

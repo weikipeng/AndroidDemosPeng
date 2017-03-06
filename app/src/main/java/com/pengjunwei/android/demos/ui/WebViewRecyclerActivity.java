@@ -7,9 +7,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import com.pengjunwei.android.demos.R;
+import com.pengjunwei.android.demos.scroll.WeiScrollLayout;
 import com.pengjunwei.android.demos.scroll.WeiWebView;
 
 /**
@@ -29,6 +33,8 @@ public class WebViewRecyclerActivity extends AppCompatActivity {
     //----------------------------------------------------------------
     protected LinearLayoutManager mLinearLayoutManager;
 
+    protected WeiScrollLayout mWeiScrollLayout;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +45,14 @@ public class WebViewRecyclerActivity extends AppCompatActivity {
 
         initData();
     }
+//
+//    protected Runnable runnable = new Runnable() {
+//        @Override
+//        public void run() {
+//            mWeiScrollLayout.scrollTo(0,666);
+//            mWeiScrollLayout.requestLayout();
+//        }
+//    };
 
     protected void initData() {
         mLinearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
@@ -51,9 +65,20 @@ public class WebViewRecyclerActivity extends AppCompatActivity {
         //--------------------------------注释--------------------------------
         //----------------------------------------------------------------
         mWebView.loadUrl("file:///android_asset/web_recyclerview_scroll.html");
+        mWebView.setWebChromeClient(new WebChromeClient(){
+
+        });
+//        mWebView.setWebViewClient(new WebViewClient(){
+//            @Override
+//            public void onPageFinished(WebView view, String url) {
+//                super.onPageFinished(view, url);
+//                mWebView.postDelayed(runnable, 3000);
+//            }
+//        });
     }
 
     protected void initView() {
+        mWeiScrollLayout = (WeiScrollLayout) findViewById(R.id.rootLayout);
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         mWebView = (WeiWebView) findViewById(R.id.webView);
     }

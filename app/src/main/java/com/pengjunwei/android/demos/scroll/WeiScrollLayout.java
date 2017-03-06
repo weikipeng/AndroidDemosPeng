@@ -10,7 +10,7 @@ import android.widget.ScrollView;
 /**
  * Created by WikiPeng on 2017/3/4 10:42.
  */
-public class WeiScrollLayout extends LinearLayout {
+public class WeiScrollLayout extends ScrollView {
     public WeiScrollLayout(Context context) {
         super(context);
     }

@@ -20,6 +20,10 @@ android {
 }
 
 dependencies {
+
+    compile 'com.facebook.stetho:stetho:1.4.2'
+    compile 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
+
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
